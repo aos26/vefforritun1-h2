@@ -1,3 +1,12 @@
+## Glósur
+
+`scss` skrár eru `src/styles`
+`styles.css` skráin er í `dist`
+`npm install` og `npm run dev`
+
+Það eru einungis tvær `.html` skrár í þessu verkefni.
+Það væri flott að hafa vel samræmt _gridrow_ og _gridcol_ á þeim, og titla og fleira samræmt. Set það kannski upp á eftir eða á morgun og byrja þá að vinna í þessu. Sýnist ég þurfa að gera e9 fyrst til að læra meira.
+
 # Hópverkefni 2
 
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.

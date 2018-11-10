@@ -16,8 +16,8 @@ html { /* stylelint-disable-line */
   overflow-x: hidden;
   overflow-y: scroll; // alltaf hafa y skrollbar
 
-  font-family: $font-main;
-  font-size: 16px;
+  font-family: $leturgerdMM;
+  font-size: $leturstaerd1;
 }
 
 img { /* stylelint-disable-line */
@@ -25,3 +25,5 @@ img { /* stylelint-disable-line */
 }
 
 // TODO import
+@import "index";
+@import "fyrirlestur";
