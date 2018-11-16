@@ -1,7 +1,12 @@
 @import "config";
 
 .main {
-  max-width: 1200px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.grid {
+  max-width: $brotpunktur3;
   margin: 0 auto;
 }
 
@@ -13,25 +18,57 @@
   flex-direction: column;
   flex-wrap: wrap;
 
-  border: 1px solid $svartur;
+  // border: 1px solid $svartur; // Gott til að sjá hvað liggur hvar
+
+  @media (min-width: $brotpunktur1) {
+    padding-right: 0.5*$gutter;
+    padding-left: 0.5*$gutter;
+    flex-direction: row;
+  }
+
+  @media (min-width: $brotpunktur3) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .grid__col {
   display: flex;
   width: 100%;
-  flex-direction: column;
+  padding-bottom: 2*$gutter;
   flex-wrap: wrap;
 
-  border: 1px solid $svartur;
+  // border: 1px solid $svartur; // Gott til að sjá hvað liggur hvar
+
+  @media (min-width: $brotpunktur1) {
+    width: 50%;
+    padding-right: 0.5*$gutter;
+    padding-left: 0.5*$gutter;
+  }
+
+  @media (min-width: $brotpunktur2) {
+    width: 33.3%;
+  }
 }
 
-.lecture_image {
+.lecture {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  background-color: $grar3;
+}
+
+.lecture__image {
   min-width: 100%;
 }
 
 .img {
   min-width: 100%;
 }
+
+/***** Byrjun á útliti takka (síun) *****/
 
 .buttons {
   display: flex;
@@ -45,27 +82,66 @@
   padding: $gutter;
   margin: $gutter;
 
+  /* Það þarf væntanlega að bæta <a href> á þá
+  og style'a það allt og feitletra textann o.fl.
+  font styling á ekki að vera undir .button */
+  font-family: $leturgerdFS;
+  font-size: $leturstaerd2;
+  font-weight: bold;
+
+  border: unset;
   border-radius: $gutter;
 }
 
-.headline2 { //
+/***** Endir á útliti takka (síun) *****/
+
+/***** Byrjun á útliti Fyrirsagna *****/
+.headline1 {
+  // Bara aðalfyrirsögnin í höfðinu á síðunum tveimur.
+  font-family: $leturgerdFS;
+  font-size: $leturstaerd4;
+}
+
+.headline2 {
+  padding: $gutter*0.5;
+  padding-top: 0;
   font-family: $leturgerdFS;
   font-size: $leturstaerd3;
 }
 
 .headline3 {
-  // Vefforritun í header, lecture_category, sami stærð og textinn sjálfur en önnur leturgerð og í hástöfum
+  /* Vefforritun í header, lecture__category
+  sama stærð og textinn sjálfur en önnur leturgerð og í hástöfum */
+  padding: $gutter*0.5;
   font-family: $leturgerdFS;
   font-size: $leturstaerd1;
   text-transform: uppercase;
 }
 
-.header {
-  height: $gutter*10;
-  padding-top: $gutter*4;
+/***** Endir á útliti Fyrirsagna *****/
+
+/***** Byrjun á útliti höfuðs *****/
+.index-header {
   background-image: url("/img/header.jpg");
+}
+
+.header {
+  height: $gutter*15;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.header__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $hviturYfirMyndum;
 }
 
 .header * {
   text-align: center;
 }
+
+/***** Endir á útliti höfuðs *****/

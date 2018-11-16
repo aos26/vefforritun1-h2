@@ -1,1 +1,12 @@
 @import "config";
+
+.lecture-header {
+  /** Bara dæmi um mynd **/
+  background-image: url("/img/code.jpg");
+}
+
+.lecture-content {
+  /** Mögulega tímabundið heitið **/
+  max-width: $brotpunktur1;
+  margin: 0 auto;
+}

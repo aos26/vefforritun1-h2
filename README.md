@@ -5,7 +5,7 @@
 `npm install` og `npm run dev`
 
 Það eru einungis tvær `.html` skrár í þessu verkefni.
-Það væri flott að hafa vel samræmt _gridrow_ og _gridcol_ á þeim, og titla og fleira samræmt. Set það kannski upp á eftir eða á morgun og byrja þá að vinna í þessu. Sýnist ég þurfa að gera e9 fyrst til að læra meira.
+Það væri flott að hafa vel samræmt _grid__row_ og _grid__col_ á þeim, og titla og fleira samræmt.
 
 # Hópverkefni 2
 
