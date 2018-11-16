@@ -1,1 +1,71 @@
 @import "config";
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid__row {
+  display: flex;
+  width: 100%;
+  padding: $gutter;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  border: 1px solid $svartur;
+}
+
+.grid__col {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  border: 1px solid $svartur;
+}
+
+.lecture_image {
+  min-width: 100%;
+}
+
+.img {
+  min-width: 100%;
+}
+
+.buttons {
+  display: flex;
+  padding: $gutter;
+
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button {
+  padding: $gutter;
+  margin: $gutter;
+
+  border-radius: $gutter;
+}
+
+.headline2 { //
+  font-family: $leturgerdFS;
+  font-size: $leturstaerd3;
+}
+
+.headline3 {
+  // Vefforritun í header, lecture_category, sami stærð og textinn sjálfur en önnur leturgerð og í hástöfum
+  font-family: $leturgerdFS;
+  font-size: $leturstaerd1;
+  text-transform: uppercase;
+}
+
+.header {
+  height: $gutter*10;
+  padding-top: $gutter*4;
+  background-image: url("/img/header.jpg");
+}
+
+.header * {
+  text-align: center;
+}
