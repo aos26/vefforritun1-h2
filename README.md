@@ -4,8 +4,12 @@
 `styles.css` skráin er í `dist`
 `npm install` og `npm run dev`
 
-Það eru einungis tvær `.html` skrár í þessu verkefni.
-Það væri flott að hafa vel samræmt _grid__row_ og _grid__col_ á þeim, og titla og fleira samræmt.
+Það eru einungis tvær _.html_ skrár í þessu verkefni.
+
+_fyrirlestur.html_ virðist ekki nota grid né flexbox, en ég setti það allt upp á _index.html_. Efnið sem er þar þarf að fara út og og allt efni nema hausinn á index og myndin í hausnum á _fyrirlestur.html_ hleðst úr _lectures.json_ skránni.
+
+Javascript vinnan verður mesta vinnan í þessu verkefni. Það þarf að lesa úr þessu _lectures.json skjali_, geyma og halda utan um upplýsingar. Þegar maður smellir á hlekk þarf maður að fara á fyrirlestur síðu og hún hleður inn réttu efni. Mjög áhugavert, ætti ekki að vera það flókið þegar maður keyrir það í gang.
+
 
 # Hópverkefni 2
 
