@@ -2,7 +2,8 @@
 
 `scss` skrár eru `src/styles`
 `styles.css` skráin er í `dist`
-`npm install` og `npm run dev`
+
+Keyra`npm install` og `npm run dev` þegar búið að klóna repo.
 
 Það eru einungis tvær _.html_ skrár í þessu verkefni.
 
