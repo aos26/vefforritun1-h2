@@ -2,10 +2,18 @@
 
 `scss` skrár eru `src/styles`
 `styles.css` skráin er í `dist`
-`npm install` og `npm run dev`
 
-Það eru einungis tvær `.html` skrár í þessu verkefni.
-Það væri flott að hafa vel samræmt _grid__row_ og _grid__col_ á þeim, og titla og fleira samræmt.
+Keyra`npm install` og `npm run dev` þegar búið að klóna repo.
+
+Það eru einungis tvær _.html_ skrár í þessu verkefni.
+
+_fyrirlestur.html_ virðist ekki nota grid né flexbox, en ég setti það allt upp á _index.html_. Efnið sem er þar þarf að fara út og og allt efni hleðst úr _lectures.json_ skránni nema
+
+   1. Hausinn og sían á _index.html_ 
+   2. Myndin í hausnum á _fyrirlestur.html_
+
+Javascript vinnan verður mesta vinnan í þessu verkefni. Það þarf að lesa úr þessu _lectures.json skjali_, geyma og halda utan um upplýsingar. Þegar maður smellir á hlekk þarf maður að fara á fyrirlestur síðu og hún hleður inn réttu efni. Mjög áhugavert, ætti ekki að vera það flókið þegar maður keyrir það í gang.
+
 
 # Hópverkefni 2
 
@@ -125,8 +133,17 @@ Eftirfarandi er sett upp í verkefni:
 
 Setja þarf upp
 
-* `rollup` til að pakka saman JavaScript kóða
-* `babel` til að _transpila_ kóða
+* `rollup` til að pakka saman JavaScript kóða **Búið**
+```
+npm install --save-dev rollup
+npm install --save-dev rollup-plugin-babel
+```
+
+* `babel` til að _transpila_ kóða **Búið**
+```
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+npm install --save @babel/polyfill
+```
 
 og bæta við í tól að ofan.
 
