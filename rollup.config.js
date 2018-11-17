@@ -1,3 +1,19 @@
+/*
+Gerði
+  npm install --save-dev @babel/core @babel/cli @babel/preset-env
+  npm install --save @babel/polyfill
+
+Nú á að vera hægt að keyra eftirfarandi skipun
+og þá verður til babel þýðing af .js skránnum okkar
+í möppunni dist:
+  npm run babel
+
+En það er betra að keyra bara
+  npm run rollup
+því babel er inní því
+*/
+
+
 import babel from 'rollup-plugin-babel';
 
 module.exports = {
