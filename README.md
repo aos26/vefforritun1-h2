@@ -133,8 +133,17 @@ Eftirfarandi er sett upp í verkefni:
 
 Setja þarf upp
 
-* `rollup` til að pakka saman JavaScript kóða
-* `babel` til að _transpila_ kóða
+* `rollup` til að pakka saman JavaScript kóða **Búið**
+```
+npm install --save-dev rollup
+npm install --save-dev rollup-plugin-babel
+```
+
+* `babel` til að _transpila_ kóða **Búið**
+```
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+npm install --save @babel/polyfill
+```
 
 og bæta við í tól að ofan.
 
