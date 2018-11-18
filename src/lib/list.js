@@ -6,9 +6,7 @@ export default class List {
   }
 
   load() {
+    // Tæmir efnið úr þessum container.
     empty(this.container);
   }
 }
-/*
-Þetta og helpers.js eru dæmi af skrám sem við getum notað og gert fleiri af með hjálparföllum o.fl.
-*/
