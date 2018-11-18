@@ -11,3 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     list.load();
   }
 });
+/*
+Held að aðal kóðinn eigi að koma hérna inn
+*/
