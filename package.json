@@ -1,7 +1,7 @@
 {
-  "name": "v10-synilausn",
+  "name": "hopverkefni-2",
   "version": "1.0.0",
-  "description": "v10",
+  "description": "Verkefnið felst í því að smíða vef sem birtir upplýsingar um fyrirlestra námskeiðsins",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint ./src/**/*.js",
@@ -10,7 +10,7 @@
     "sass": "node-sass --source-map-embed ./src/styles/styles.scss ./dist/styles.css",
     "sass-watch": "node-sass --source-map-embed --watch --recursive src/styles/styles.scss ./dist/styles.css",
     "test": "npm-run-all eslint stylelint",
-    "dev": "npm-run-all --parallel sass sass-watch browser-sync",
+    "dev": "npm-run-all --parallel sass sass-watch browser-sync rollup",
     "rollup": "rollup -c",
     "rollup-watch": "rollup -c -w"
   },

@@ -18,15 +18,15 @@
       </div>
     </header><!----------End of Header---------->
 
-    <section class="buttons"><!--Beginning of Button Section-->
-      <button class="button">HTML</button>
-      <button class="button">CSS</button>
-      <button class="button">JavaScript</button>
+    <section class="buttons"><!--Beginning of Button Section   Gætum þurft að breyta þeim í checkbox og style'a þá?-->
+      <button class="button html-butt">HTML</button>
+      <button class="button css-butt">CSS</button>
+      <button class="button js-butt">JavaScript</button>
     </section><!----------End of Button Section---------->
 
     <section class="grid"><!-----Beginning of Grid Section----->
 
-      <div class="grid__row"><!--Byrjun grid__row-->
+      <div class="grid__row list"><!--Byrjun grid__row, einning class="list", hingað kemur efnið úr lectures.json -->
         <div class="grid__col"><!--Sample content, þetta á raunverulega að vera lesið úr lectures.json-->
           <div class="lecture">
             <div class="lecture__title"><h2 class="headline2"><a href="/fyrirlestur.html">Sagan (+ linkur)</a></h2></div>
@@ -60,6 +60,9 @@
     </section><!----------Beginning of Grid Section---------->
 
   </main><!----------End of Main Content---------->
-  
+
+  <!-- Hef ekki náð að keyra npm run dev með "rollup-watch" í því, bara "rollup",
+  Svo það þarf að refresh'a gluggann ef maður breytir script-->
+  <script src="./dist/bundle.js"></script>
 </body>
 </html>
