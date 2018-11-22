@@ -1,5 +1,54 @@
 import { empty, displayAllLecturesOnIndex } from './helpers';
 
+const buttonBool = new Array(3).fill(false);
+
+let jsonData = 0;
+const lectureKeys0 = ['title', 'category', 'thumbnail'];
+
+const DATA_URL = '/lectures.json';
+
+const container = document.querySelector('.list');
+
+function onClickHtml() {
+  if (!buttonBool[0]) {
+    buttonBool[0] = true;
+    empty(container);
+    displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+  } else {
+    buttonBool[0] = false;
+    // Birta efni tilbaka
+    empty(container);
+    displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+  }
+}
+
+function onClickCss() {
+  if (!buttonBool[1]) {
+    buttonBool[1] = true;
+    empty(container);
+    displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+  } else {
+    buttonBool[1] = false;
+    // Birta efni tilbaka
+    empty(container);
+    displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+  }
+}
+
+function onClickJs() {
+  if (!buttonBool[2]) {
+    buttonBool[2] = true;
+    empty(container);
+    displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+  } else {
+    buttonBool[2] = false;
+    // Birta efni tilbaka
+    empty(container);
+    displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+  }
+}
+
+
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
@@ -10,6 +59,9 @@ export default class List {
      this.cssButt = document.querySelector('css-butt');
      this.jsButt = document.querySelector('js-butt');
      */
+    this.htmlButt = document.querySelector('.html-butt');
+    this.cssButt = document.querySelector('.css-butt');
+    this.jsButt = document.querySelector('.js-butt');
   }
 
   /**
@@ -18,11 +70,11 @@ export default class List {
   load() {
     // Tæmir efnið úr þessum container.
     empty(this.container);
+    this.htmlButt.addEventListener('click', onClickHtml);
+    this.cssButt.addEventListener('click', onClickCss);
+    this.jsButt.addEventListener('click', onClickJs);
 
     // Þetta er fylkið með lyklum að efni á forsíðuna, þurfum svo annað fyrir fyrirlestur.html
-    const lectureKeys0 = ['title', 'category', 'thumbnail'];
-
-    const DATA_URL = '/lectures.json';
     /**
      * Sækir gögnin úr lectures.json
      */
@@ -34,7 +86,8 @@ export default class List {
         throw new Error('Villa við að sækja gögn');
       })
       .then((data) => {
-        displayAllLecturesOnIndex(this.container, lectureKeys0, data.lectures);
+        jsonData = data;
+        displayAllLecturesOnIndex(this.container, lectureKeys0, data.lectures, buttonBool);
       })
       .catch((error) => {
         console.error(error); // eslint-disable-line
@@ -48,6 +101,11 @@ export default class List {
      */
   }
 }
+/**
+ * Síar út efnið
+ */
+
+
 
 /*
 

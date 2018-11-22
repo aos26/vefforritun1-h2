@@ -7,6 +7,7 @@ export function empty(element) {
   }
 }
 
+
 /**
  * Fyrir: Element el, almennt sjálfsagt .list
  *        lectInfo er fylki með útvöldum strengjum úr lectures.json
@@ -62,38 +63,30 @@ function displayLectureOnIndex(el, lectInfo) {
   element.appendChild(gridCol);
 }
 
+function allEqual(arr) {
+  return new Set(arr).size === 1;
+}
 
-export function displayAllLecturesOnIndex(el, lectKeys, allLects) {
+export function displayAllLecturesOnIndex(el, lectKeys, allLects, buttonBool) {
   const element = el;
   const lectureKeys = lectKeys;
   const allLectures = allLects;
-  console.log(typeof allLectures); // eslint-disable-line no-console
-  console.log(allLectures.length); // eslint-disable-line no-console
 
   allLectures.forEach((k) => {
     const lectureInfo = [k[lectureKeys[0]], k[lectureKeys[1]], k[lectureKeys[2]]];
-    displayLectureOnIndex(element, lectureInfo);
-  });
-
-
-  /*
-  allLectures.forEach((k) => {
-    console.log(typeof k); // eslint-disable-line no-console
-    const kStr = JSON.stringify(k);
-    console.log(kStr); // eslint-disable-line no-console
-    const kP = JSON.parse(kStr);
-    console.log(kP); // eslint-disable-line no-console
-  });
-  console.log(typeof allLectures); // eslint-disable-line no-console
-  */
-
-  /*
-  allLectures.forEach((i) => {
-    const lecture = allLectures[i];
-    lectureKeys.forEach((k) => {
-      const lectureInfo = lecture[k];
+    const category = lectureInfo[1];
+    if (allEqual(buttonBool)) {
       displayLectureOnIndex(element, lectureInfo);
-    });
+    } else
+      if (buttonBool[0] && category === 'html') { // Ef það er klikkað á html takkann til þess að sía síðu
+        displayLectureOnIndex(element, lectureInfo);
+      } else
+        if (buttonBool[1] && category === 'css') { // Ef það er klikkað á css takkann til þess að sía síðu
+          displayLectureOnIndex(element, lectureInfo);
+        } else
+          if (buttonBool[2] && category === 'javascript') { // Ef það er klikkað á js takkann til þess að sía síðu
+            displayLectureOnIndex(element, lectureInfo);
+          }
+
   });
-  */
 }
