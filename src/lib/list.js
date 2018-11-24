@@ -9,16 +9,36 @@ const DATA_URL = '/lectures.json';
 
 const container = document.querySelector('.list');
 
+function loadLecture(e) { // TODO
+  const target = e.target.textContent;
+  jsonData.lectures.forEach((el) => {
+    const elTitle = el.title;
+    const elSlug = el.slug;
+    if (target === elTitle) { // Aðeins hægt að klikka á titilin á index á lecture
+      sessionStorage.setItem('data', JSON.stringify(el));
+      window.location.href = (`http://localhost:3002/fyrirlestur.html?slug=${elSlug}`);
+    }
+  });
+}
+
+function addEventHandler() {
+  const lecture = document.getElementsByClassName('lecture');
+  for (let i = 0; i < lecture.length; i++) {
+    lecture[i].addEventListener('click', loadLecture);
+  }
+}
+
 function onClickHtml() {
   if (!buttonBool[0]) {
     buttonBool[0] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+    addEventHandler();
   } else {
     buttonBool[0] = false;
-    // Birta efni tilbaka
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+    addEventHandler();
   }
 }
 
@@ -27,11 +47,12 @@ function onClickCss() {
     buttonBool[1] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+    addEventHandler();
   } else {
     buttonBool[1] = false;
-    // Birta efni tilbaka
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+    addEventHandler();
   }
 }
 
@@ -40,11 +61,12 @@ function onClickJs() {
     buttonBool[2] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+    addEventHandler();
   } else {
     buttonBool[2] = false;
-    // Birta efni tilbaka
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
+    addEventHandler();
   }
 }
 
@@ -52,13 +74,6 @@ function onClickJs() {
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
-    /**
-     * FILTER BUTTONS
-     * Þurfum örugglega að finna HTML, CSS og JS takkana:
-     this.htmlButt = document.querySelector('html-butt');
-     this.cssButt = document.querySelector('css-butt');
-     this.jsButt = document.querySelector('js-butt');
-     */
     this.htmlButt = document.querySelector('.html-butt');
     this.cssButt = document.querySelector('.css-butt');
     this.jsButt = document.querySelector('.js-butt');
@@ -88,25 +103,16 @@ export default class List {
       .then((data) => {
         jsonData = data;
         displayAllLecturesOnIndex(this.container, lectureKeys0, data.lectures, buttonBool);
+        addEventHandler();
       })
       .catch((error) => {
         console.error(error); // eslint-disable-line
       });
-    /**
-     * FILTER BUTTONS
-     * Þurfum örugglega event listeners fyrir takkana þrjá
-     this.htmlButt.addEventListener('click', this.click.bind(this));
-     this.cssButt.addEventListener('click', this.click.bind(this));
-     this.jsButt.addEventListener('click', this.click.bind(this));
-     */
   }
 }
 /**
  * Síar út efnið
- */
-
-
-
+ *
 /*
 
 const [{
