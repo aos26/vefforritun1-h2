@@ -152,18 +152,13 @@ function displayContentOnLecturePage(el, lpContent) {
         displayList(element, kd);
         break;
       case types[6]:
-        console.log(kd);
         displayCode(element, kd);
         break;
 
-      default: // text
+        // TODO breyta þessu í villuboð eða bara geri ekki neitt
+      default:
         console.log("type passaði ekki við það sem við bjuggumst");
         break;
-    }
-
-
-    if(k.type==='youtube') {
-      console.log(k);
     }
   });
 }
