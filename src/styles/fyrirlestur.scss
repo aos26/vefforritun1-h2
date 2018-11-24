@@ -1,12 +1,63 @@
 @import "config";
 
-.lecture-header {
-  /** Bara dæmi um mynd **/
-  background-image: url("/img/code.jpg");
+.lecture-content {
+  max-width: $brotpunktur1;
+  padding: $gutter;
+  margin: $gutter auto;
 }
 
-.lecture-content {
-  /** Mögulega tímabundið heitið **/
-  max-width: $brotpunktur1;
-  margin: 0 auto;
+/***** Byrjun á stíl youTube myndbands *****/
+.lecture-video {
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 4x3 Aspect Ratio */
+.lecture-video-4x3 {
+  padding-top: 75%;
+}
+
+.lp-p {
+  padding-top: $gutter;
+}
+
+/*
+Fengið frá
+https://benmarshall.me/responsive-iframes/
+*/
+
+/***** Endir á stíl youTube myndbands *****/
+
+// TODO style blockquote
+.lp-bq {
+  padding: $gutter;
+  background-color: $grar3;
+}
+
+.lp-h2 {
+  padding-top: $gutter;
+  font-family: $leturgerdFS;
+  font-size: $leturstaerd3;
+}
+
+.lp-li {
+  padding-top: $gutter;
+}
+
+.lp-code {
+  display: block;
+}
+
+.lp-div {
+  margin-top: $gutter;
 }

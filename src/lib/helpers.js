@@ -77,16 +77,12 @@ export function displayAllLecturesOnIndex(el, lectKeys, allLects, buttonBool) {
     const category = lectureInfo[1];
     if (allEqual(buttonBool)) {
       displayLectureOnIndex(element, lectureInfo);
-    } else
-      if (buttonBool[0] && category === 'html') { // Ef það er klikkað á html takkann til þess að sía síðu
-        displayLectureOnIndex(element, lectureInfo);
-      } else
-        if (buttonBool[1] && category === 'css') { // Ef það er klikkað á css takkann til þess að sía síðu
-          displayLectureOnIndex(element, lectureInfo);
-        } else
-          if (buttonBool[2] && category === 'javascript') { // Ef það er klikkað á js takkann til þess að sía síðu
-            displayLectureOnIndex(element, lectureInfo);
-          }
-
+    } else if (buttonBool[0] && category === 'html') { // Ef það er klikkað á html takkann til þess að sía síðu
+      displayLectureOnIndex(element, lectureInfo);
+    } else if (buttonBool[1] && category === 'css') { // Ef það er klikkað á css takkann til þess að sía síðu
+      displayLectureOnIndex(element, lectureInfo);
+    } else if (buttonBool[2] && category === 'javascript') { // Ef það er klikkað á js takkann til þess að sía síðu
+      displayLectureOnIndex(element, lectureInfo);
+    }
   });
 }

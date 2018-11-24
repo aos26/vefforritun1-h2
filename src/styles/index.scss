@@ -86,9 +86,14 @@
   font-size: $leturstaerd2;
   font-weight: bold;
 
+  background-color: $grar3;
+
   border: unset;
   border-radius: $gutter;
-  background-color: $grar3;
+}
+
+.button:focus {
+  outline: none;
 }
 
 /***** Endir á útliti takka (síun) *****/

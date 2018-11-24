@@ -14,7 +14,7 @@ function loadLecture(e) { // TODO
   jsonData.lectures.forEach((el) => {
     const elTitle = el.title;
     const elSlug = el.slug;
-    if (target === elTitle) { // Aðeins hægt að klikka á titilin á index á lecture
+    if (target === elTitle) { // Hægt að klikka hvar sem er. Hálfgert "skítmix"
       sessionStorage.setItem('data', JSON.stringify(el));
       window.location.href = (`http://localhost:3002/fyrirlestur.html?slug=${elSlug}`);
     }
