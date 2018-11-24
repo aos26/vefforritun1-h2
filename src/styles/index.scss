@@ -82,15 +82,13 @@
   padding: $gutter;
   margin: $gutter;
 
-  /* Það þarf væntanlega að bæta <a href> á þá
-  og style'a það allt og feitletra textann o.fl.
-  font styling á ekki að vera undir .button */
   font-family: $leturgerdFS;
   font-size: $leturstaerd2;
   font-weight: bold;
 
   border: unset;
   border-radius: $gutter;
+  background-color: $grar3;
 }
 
 /***** Endir á útliti takka (síun) *****/
