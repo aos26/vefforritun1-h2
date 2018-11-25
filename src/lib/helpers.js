@@ -9,11 +9,11 @@ export function empty(element) {
 
 
 /**
- * Fyrir: Element el, almennt sjálfsagt .list
+ * Fyrir: Element el, almennt .list
  *        lectInfo er fylki með útvöldum strengjum úr lectures.json
  *          þeir innihalda title, category og thumbnail
  * Eftir: Smíðar eftirfarandi HTML element og setur það inní <div class="grid__row list">
-         <div class="grid__col"><!--Sample content, þetta á raunverulega að vera lesið úr lectures.json-->
+        <div class="grid__col">
           <div class="lecture">
             <div class="lecture__title"><h2 class="headline2">lectureTitleString</h2></div>
             <div class="lecture__category"><h3 class="headline3">lectureCategoryString</h3></div>
@@ -86,3 +86,94 @@ export function displayAllLecturesOnIndex(el, lectKeys, allLects, buttonBool) {
     }
   });
 }
+
+// ***** Byrjun á safni falla til að birta efni á fyrirlestur.html ***** //
+
+export function displayYoutubeVideo(el, data) {
+  const div = document.createElement('div');
+  div.className = 'lecture-video';
+  const lecVideo = document.createElement('iframe');
+  lecVideo.className = 'iframe';
+  lecVideo.src = data;
+  div.appendChild(lecVideo);
+  el.appendChild(div);
+}
+
+export function displayText(el, data) {
+  const div = document.createElement('div');
+  div.className = 'lp-div';
+  const textArray = data.split('\n');
+  textArray.forEach((k) => {
+    const p = document.createElement('p');
+    p.className = 'lp-p';
+    p.appendChild(document.createTextNode(k));
+    div.appendChild(p);
+  });
+  el.appendChild(div);
+}
+
+export function displayQuote(el, data, attribute) {
+  const bq = document.createElement('blockquote');
+  bq.className = 'lp-div lp-bq';
+  const p0 = document.createElement('p');
+  p0.appendChild(document.createTextNode(data));
+  bq.appendChild(p0);
+  if (attribute !== '') {
+    const p1 = document.createElement('p');
+    p1.className = 'lp-p';
+    p1.appendChild(document.createTextNode(attribute));
+    bq.appendChild(p1);
+  }
+  el.appendChild(bq);
+}
+
+export function displayImage(el, data, caption) {
+  const div = document.createElement('div');
+  div.className = 'lp-image';
+  const img = document.createElement('img');
+  img.className = 'lp-img';
+  img.src = data;
+  div.appendChild(img);
+  el.appendChild(div);
+  if (caption !== '') {
+    const cite = document.createElement('cite');
+    cite.appendChild(document.createTextNode(caption));
+    div.appendChild(cite);
+  }
+}
+
+export function displayHeading(el, data) {
+  const h2 = document.createElement('h2');
+  h2.className = 'lp-h2';
+  h2.appendChild(document.createTextNode(data));
+  el.appendChild(h2);
+}
+
+export function displayList(el, data) {
+  const ul = document.createElement('ul');
+  ul.className = 'lp-ul';
+  data.forEach((k) => {
+    const li = document.createElement('li');
+    li.className = 'lp-li';
+    li.appendChild(document.createTextNode(k));
+    ul.appendChild(li);
+  });
+  el.appendChild(ul);
+}
+
+// TODO bæta við tómum línum eftir fyrirsögn og fyrir lista í markdown'inu
+export function displayCode(el, data) {
+  const div = document.createElement('div');
+  div.className = 'lp-div';
+
+  const textArray = data.split('\n'); // Virðast vera tvö \n á eftir ### Markdown fyrirsögn
+  textArray.forEach((k) => {
+    const code = document.createElement('code');
+    code.className = 'lp-code';
+    code.appendChild(document.createTextNode(k));
+    div.appendChild(code);
+  });
+  el.appendChild(div);
+}
+
+// ***** Endir á safni falla til að birta efni á fyrirlestur.html ***** //

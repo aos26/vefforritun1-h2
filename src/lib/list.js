@@ -1,12 +1,9 @@
 import { empty, displayAllLecturesOnIndex } from './helpers';
 
 const buttonBool = new Array(3).fill(false);
-
-let jsonData = 0;
+let jsonData;
 const lectureKeys0 = ['title', 'category', 'thumbnail'];
-
 const DATA_URL = '/lectures.json';
-
 const container = document.querySelector('.list');
 
 function loadLecture(e) { // TODO
@@ -23,7 +20,7 @@ function loadLecture(e) { // TODO
 
 function addEventHandler() {
   const lecture = document.getElementsByClassName('lecture');
-  for (let i = 0; i < lecture.length; i++) {
+  for (let i = 0; i < lecture.length; i += 1) {
     lecture[i].addEventListener('click', loadLecture);
   }
 }
@@ -110,30 +107,3 @@ export default class List {
       });
   }
 }
-/**
- * Síar út efnið
- *
-/*
-
-const [{
-  slug,
-  title,
-  category,
-  image,
-  thumbnail,
-  content
-}] = lecture;
-
-
-// Þurfum að lesa efnið úr lectures á fyrirlestrasíðunni og birta efni á viðeigandi hátt
-const [{
-  youtube, // inniheldur hlekk á youtube myndband
-  text, // inniheldur gögn þar sem \n merkir á milli málsgreina, þ.e.a.s. texta skal birta innan <p>, skipt á \n
-  quote, //  inniheldur tilvitnun, aukalega getur verið `attribute` með þeim sem vitnað er í
-  image, // inniheldur slóð á mynd, aukalega getur verið ` caption`  með texta með mynd
-  heading, // inniheldur fyrirsögn
-  list, // inniheldur fylki af textum í lista
-  code // inniheldur kóða þar sem bil og nýjar línur skipta máli
-}] = datatype; // content
-
-*/

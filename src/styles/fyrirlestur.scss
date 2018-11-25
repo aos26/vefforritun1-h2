@@ -38,10 +38,13 @@ https://benmarshall.me/responsive-iframes/
 
 /***** Endir á stíl youTube myndbands *****/
 
-// TODO style blockquote
 .lp-bq {
   padding: $gutter;
   background-color: $grar3;
+}
+
+.lp-image {
+  padding-top: $gutter;
 }
 
 .lp-h2 {
