@@ -6,7 +6,8 @@ const lectureKeys0 = ['title', 'category', 'thumbnail'];
 const DATA_URL = '/lectures.json';
 const container = document.querySelector('.list');
 const htmlColorButton = document.querySelector('.html-butt');
-const
+const cssColorButton = document.querySelector('.css-butt');
+const jsColorButton = document.querySelector('.js-butt');
 
 function loadLecture(e) { // TODO
   const target = e.target.textContent;
@@ -39,7 +40,7 @@ function onClickHtml() {
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
-    changeColor('#ccc', htmlButton);
+    changeColor('#ccc', htmlColorButton);
     buttonBool[0] = false;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
@@ -49,11 +50,13 @@ function onClickHtml() {
 
 function onClickCss() {
   if (!buttonBool[1]) {
+    changeColor('#2d2', cssColorButton);
     buttonBool[1] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
+    changeColor('#ccc', cssColorButton);
     buttonBool[1] = false;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
@@ -63,11 +66,13 @@ function onClickCss() {
 
 function onClickJs() {
   if (!buttonBool[2]) {
+    changeColor('#2d2', jsColorButton);
     buttonBool[2] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
+    changeColor('#ccc', jsColorButton);
     buttonBool[2] = false;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
