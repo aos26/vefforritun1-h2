@@ -5,6 +5,8 @@ let jsonData;
 const lectureKeys0 = ['title', 'category', 'thumbnail'];
 const DATA_URL = '/lectures.json';
 const container = document.querySelector('.list');
+const htmlColorButton = document.querySelector('.html-butt');
+const
 
 function loadLecture(e) { // TODO
   const target = e.target.textContent;
@@ -25,13 +27,19 @@ function addEventHandler() {
   }
 }
 
+function changeColor(color, button) {
+  button.style.backgroundColor = color;
+}
+
 function onClickHtml() {
   if (!buttonBool[0]) {
+    changeColor('#2d2', htmlColorButton);
     buttonBool[0] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
+    changeColor('#ccc', htmlButton);
     buttonBool[0] = false;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
