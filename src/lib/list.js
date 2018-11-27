@@ -35,12 +35,16 @@ function changeColor(color, button) {
 function onClickHtml() {
   if (!buttonBool[0]) {
     changeColor('#2d2', htmlColorButton);
+    htmlColorButton.classList.remove('button-grey');
+    htmlColorButton.classList.add('button-green');
     buttonBool[0] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
     changeColor('#ccc', htmlColorButton);
+    htmlColorButton.classList.remove('button-green');
+    htmlColorButton.classList.add('button-grey');
     buttonBool[0] = false;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
@@ -51,12 +55,16 @@ function onClickHtml() {
 function onClickCss() {
   if (!buttonBool[1]) {
     changeColor('#2d2', cssColorButton);
+    cssColorButton.classList.remove('button-grey');
+    cssColorButton.classList.add('button-green');
     buttonBool[1] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
     changeColor('#ccc', cssColorButton);
+    cssColorButton.classList.remove('button-green');
+    cssColorButton.classList.add('button-grey');
     buttonBool[1] = false;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
@@ -67,12 +75,16 @@ function onClickCss() {
 function onClickJs() {
   if (!buttonBool[2]) {
     changeColor('#2d2', jsColorButton);
+    jsColorButton.classList.remove('button-grey');
+    jsColorButton.classList.add('button-green');
     buttonBool[2] = true;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
     changeColor('#ccc', jsColorButton);
+    jsColorButton.classList.remove('button-green');
+    jsColorButton.classList.add('button-grey');
     buttonBool[2] = false;
     empty(container);
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
@@ -87,6 +99,9 @@ export default class List {
     this.htmlButt = document.querySelector('.html-butt');
     this.cssButt = document.querySelector('.css-butt');
     this.jsButt = document.querySelector('.js-butt');
+    htmlColorButton.classList.add('button-grey');
+    cssColorButton.classList.add('button-grey');
+    jsColorButton.classList.add('button-grey');
   }
 
   /**

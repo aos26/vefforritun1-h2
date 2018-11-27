@@ -148,3 +148,24 @@
 }
 
 /***** Endir á útliti höfuðs *****/
+
+//Búa til hover eiginlegika á tökkunum HTML, CSS og JS
+
+.button-green {
+  transition: background-color $kvikun;
+}
+
+.button-grey {
+  transition: background-color $kvikun;
+}
+
+.button-green:hover {
+  background-color: $graenn2!important;
+  cursor: pointer;
+}
+
+.button-grey:hover {
+  background-color: $grar2!important;
+  cursor: pointer;
+}
+
