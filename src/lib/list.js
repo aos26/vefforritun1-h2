@@ -16,7 +16,7 @@ function loadLecture(e) { // TODO
     const elSlug = el.slug;
     if (target === elTitle) { // Hægt að klikka hvar sem er. Hálfgert "skítmix"
       sessionStorage.setItem('data', JSON.stringify(el));
-      window.location.href = (`http://localhost:3002/fyrirlestur.html?slug=${elSlug}`);
+      window.location.href = (`http://localhost:3000/fyrirlestur.html?slug=${elSlug}`);
     }
   });
 }

@@ -1,3 +1,16 @@
+#Hópverkefni 2
+
+## Keyrsla
+
+Keyra skal verkefnið með því að opna staðsetningu skjals í Command Window (eða sambærilegu forriti) og keyra skipunina npm install. Þá skal nota skipunina npm run dev.
+
+
+
+
+
+
+
+
 ## Glósur
 
 `scss` skrár eru `src/styles`

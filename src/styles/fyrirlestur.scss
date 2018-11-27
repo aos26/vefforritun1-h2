@@ -64,3 +64,15 @@ https://benmarshall.me/responsive-iframes/
 .lp-div {
   margin-top: $gutter;
 }
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer__button {
+  margin-bottom: $gutter;
+  border: none;
+  background-color: transparent;
+}
