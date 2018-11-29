@@ -9,7 +9,7 @@ const htmlColorButton = document.querySelector('.html-butt');
 const cssColorButton = document.querySelector('.css-butt');
 const jsColorButton = document.querySelector('.js-butt');
 
-function loadLecture(e) { // TODO
+function loadLecture(e) {
   const parentNodeList = e.target.parentNode.parentNode.childNodes;
   const parentNodeList2 = e.target.parentNode.childNodes;
   let parentNodeTextContent = parentNodeList[0].textContent;

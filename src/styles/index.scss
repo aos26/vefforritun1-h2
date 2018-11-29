@@ -92,6 +92,10 @@
   border-radius: $gutter;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .button:focus {
   outline: none;
 }
@@ -105,12 +109,14 @@
 }
 
 .button-green:hover {
-  cursor: pointer;
+  /* Hér er notað !important því það er annar litur með hærra specificity,
+  ákvarðaður í src/lib/list.js */
   background-color: $graenn2 !important;
 }
 
 .button-grey:hover {
-  cursor: pointer;
+  /* Hér er notað !important því það er annar litur með hærra specificity,
+  ákvarðaður í src/lib/list.js */
   background-color: $grar2 !important;
 }
 
