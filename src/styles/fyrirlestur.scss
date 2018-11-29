@@ -31,10 +31,7 @@
   padding-top: $gutter;
 }
 
-/*
-Fengið frá
-https://benmarshall.me/responsive-iframes/
-*/
+// Fengið frá https://benmarshall.me/responsive-iframes/
 
 /***** Endir á stíl youTube myndbands *****/
 
@@ -73,8 +70,9 @@ https://benmarshall.me/responsive-iframes/
 
 .footer__button {
   margin-bottom: $gutter;
-  border: none;
+  font-family: $leturgerdFS;
   background-color: transparent;
+  border: unset;
 }
 
 .lecture {
@@ -83,4 +81,12 @@ https://benmarshall.me/responsive-iframes/
 
 .lecture:hover {
   background-color: $grar1;
+}
+
+.footer__button:hover {
+  cursor: pointer;
+}
+
+.footer__button:focus {
+  outline: none;
 }

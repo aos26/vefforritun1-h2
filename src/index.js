@@ -9,16 +9,15 @@ import {
   displayList,
 } from './lib/helpers';
 
-let klaradButt = 0;
-let backButt = 0;
+let klaradButt;
+let backButt;
 
 function lecKlaradur() {
   const currTexti = klaradButt.innerText;
-  let texti;
   const slug = window.location.search.substring(6);
   if (currTexti === 'Klára fyrirlestur') {
     klaradButt.style.color = '#2d2';
-    texti = '✔ Kláraður fyrirlestur';
+    const texti = '✔ Kláraður fyrirlestur';
     klaradButt.innerText = texti;
     window.localStorage.setItem(`${slug}`, slug);
   } else {
@@ -32,6 +31,9 @@ function lecHome() {
   window.location.href = ('http://localhost:3000');
 }
 
+/**
+ * Birtir fót á fyrirlestur.html
+ */
 function displayFooter(el, lpSlug) {
   const savedSlug = window.localStorage.getItem(lpSlug);
   let texti;
@@ -60,7 +62,9 @@ function displayFooter(el, lpSlug) {
   el.appendChild(lecFooter);
 }
 
-// TODO setja gráan bakgrunn ef það er engin lpImg
+/**
+ * Birtir haus á fyrirlestur.html
+ */
 function displayHeader(el, lpCategory, lpTitle, lpImg) {
   // Búa til hausinn
   const lecHeader = document.createElement('header');
@@ -77,8 +81,7 @@ function displayHeader(el, lpCategory, lpTitle, lpImg) {
   // Setja hausinn á síðuna
   if (lpImg === 'url(\'/undefined\')') {
     lecHeader.style.backgroundColor = '#aaa';
-  }
-  else {
+  } else {
     lecHeader.style.backgroundImage = lpImg;
   }
   lecHeaderContent.appendChild(lecHeaderH3);
@@ -146,8 +149,6 @@ function displayContent(el, lpContent) {
  */
 function loadLecturePage(page) {
   const lectureData = JSON.parse(sessionStorage.getItem('data'));
-  console.log(lectureData);
-  console.log(lectureData.content);
 
   const lpCategory = lectureData.category;
   const lpTitle = lectureData.title;
@@ -172,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * Ef DOM síðan sem hlóðst hefur class="lecture-page", þá er
      * kallað á fallið loadLecturePage
      */
-    // const lectureData = JSON.parse(sessionStorage.getItem('data'));
     loadLecturePage(page);
     klaradButt = document.querySelector('.klarad');
     klaradButt.addEventListener('click', lecKlaradur);

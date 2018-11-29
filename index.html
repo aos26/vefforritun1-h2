@@ -11,8 +11,7 @@
 </head>
 
 <body>
-  <main class="main">
-    <!-----Beginning of Main Content----->
+  <main class="main"><!-----Beginning of Main Content----->
 
     <header class="header index-header">
       <!-----Beginning of Header----->
@@ -31,13 +30,10 @@
     </section>
     <!----------End of Button Section---------->
 
-    <section class="grid">
-      <!-----Beginning of Grid Section----->
-
-      <div class="grid__row list">
-        <!--Byrjun grid__row, einning class="list", hingað kemur efnið úr lectures.json -->
+    <section class="grid"><!-----Beginning of Grid Section----->
+      <div class="grid__row list"><!--Byrjun á class="grid__row list"-->
         <div class="grid__col">
-          <!--Sample content, þetta á raunverulega að vera lesið úr lectures.json-->
+          <!--Sample content, þetta er fjarlægt og sambærilegt lesið úr lectures.json-->
           <div class="lecture">
             <div class="lecture__title">
               <h2 class="headline2"><a href="/fyrirlestur.html">Sagan (+ linkur)</a></h2>
@@ -48,53 +44,11 @@
             <div class="lecture__image"><img src="/img/thumb1.jpg" alt="" class="img"></div>
           </div>
         </div>
-        <div class="grid__col">
-          <!--Sample content, þetta á raunverulega að vera lesið úr lectures.json-->
-          <div class="lecture">
-            <div class="lecture__title">
-              <h2 class="headline2">Gildi, týpur og virkjar</h2>
-            </div>
-            <div class="lecture__category">
-              <h3 class="headline3">HTML</h3>
-            </div>
-            <div class="lecture__image"><img src="" alt="" class="img"></div>
-          </div>
         </div>
-        <div class="grid__col">
-          <!--Sample content, þetta á raunverulega að vera lesið úr lectures.json-->
-          <div class="lecture">
-            <div class="lecture__title">
-              <h2 class="headline2">Sagan</h2>
-            </div>
-            <div class="lecture__category">
-              <h3 class="headline3">HTML</h3>
-            </div>
-            <div class="lecture__image"><img src="/img/thumb1.jpg" alt="" class="img"></div>
-          </div>
-        </div>
-        <div class="grid__col">
-          <!--Sample content, þetta á raunverulega að vera lesið úr lectures.json-->
-          <div class="lecture">
-            <div class="lecture__title">
-              <h2 class="headline2">Sagan</h2>
-            </div>
-            <div class="lecture__category">
-              <h3 class="headline3">HTML</h3>
-            </div>
-            <div class="lecture__image"><img src="/img/thumb1.jpg" alt="" class="img"></div>
-          </div>
-        </div>
+      </div><!----------Endir grid__row---------->
+    </section><!----------End of Grid Section---------->
 
-      </div>
-      <!----------Endir grid__row---------->
-    </section>
-    <!----------Beginning of Grid Section---------->
-
-  </main>
-  <!----------End of Main Content---------->
-
-  <!-- Hef ekki náð að keyra npm run dev með "rollup-watch" í því, bara "rollup",
-  Svo það þarf að refresh'a gluggann ef maður breytir script-->
+  </main><!----------End of Main Content---------->
   <script src="./dist/bundle.js"></script>
 </body>
 

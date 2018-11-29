@@ -32,7 +32,7 @@ function loadLecture(e) { // TODO
   jsonData.lectures.forEach((el) => {
     const elTitle = el.title;
     const elSlug = el.slug;
-    if (title === elTitle) { // Hægt að klikka hvar sem er. Hálfgert "skítmix"
+    if (title === elTitle) {
       sessionStorage.setItem('data', JSON.stringify(el));
       window.location.href = (`http://localhost:3000/fyrirlestur.html?slug=${elSlug}`);
     }
@@ -124,16 +124,16 @@ export default class List {
   }
 
   /**
+   * Tæmir efnið úr þessum container
    * Hleður inn efninu úr lectures.json
+   * Sendir efnið áfram til birtingar
    */
   load() {
-    // Tæmir efnið úr þessum container.
     empty(this.container);
     this.htmlButt.addEventListener('click', onClickHtml);
     this.cssButt.addEventListener('click', onClickCss);
     this.jsButt.addEventListener('click', onClickJs);
 
-    // Þetta er fylkið með lyklum að efni á forsíðuna, þurfum svo annað fyrir fyrirlestur.html
     /**
      * Sækir gögnin úr lectures.json
      */
