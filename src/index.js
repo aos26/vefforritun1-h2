@@ -9,6 +9,36 @@ import {
   displayList,
 } from './lib/helpers';
 
+let klaradButt = 0;
+let backButt = 0;
+
+function lecKlaradur() {
+  klaradButt.style.color = '#2d2';
+}
+
+function lecHome() {
+  window.location.href = (`http://localhost:3000`);
+}
+
+function displayFooter(el) {
+  const lecFooter = document.createElement('footer');
+  lecFooter.className = 'footer';
+  const lecFooterContent = document.createElement('div');
+  lecFooterContent.className = 'footer__content';
+  const lecKlarad = document.createElement('button');
+  lecKlarad.className = 'footer__button';
+  lecKlarad.classList.add('klarad');
+  lecKlarad.appendChild(document.createTextNode('Klára fyrirlestur'));
+  const lecBack = document.createElement('button');
+  lecBack.className = 'footer__button';
+  lecBack.classList.add('back');
+  lecBack.appendChild(document.createTextNode('Til baka'));
+
+  lecFooterContent.appendChild(lecKlarad);
+  lecFooterContent.appendChild(lecBack);
+  lecFooter.appendChild(lecFooterContent);
+  el.appendChild(lecFooter);
+}
 
 // TODO setja gráan bakgrunn ef það er engin lpImg
 function displayHeader(el, lpCategory, lpTitle, lpImg) {
@@ -100,6 +130,7 @@ function loadLecturePage(page) {
   const lpContent = lectureData.content;
   displayHeader(page, lpCategory, lpTitle, lpImg);
   displayContent(page, lpContent);
+  displayFooter(page);
 }
 
 /**
@@ -117,6 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     // const lectureData = JSON.parse(sessionStorage.getItem('data'));
     loadLecturePage(page);
+    klaradButt = document.querySelector('.klarad');
+    klaradButt.addEventListener('click', lecKlaradur);
+    backButt = document.querySelector('.back');
+    backButt.addEventListener('click', lecHome);
+
   } else {
     /**
      * Ef DOM síðan sem hlóðst er ekki "lecture-page", þ.e. "index.html" síðan,
