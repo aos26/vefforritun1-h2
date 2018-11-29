@@ -7,13 +7,25 @@ const DATA_URL = '/lectures.json';
 const container = document.querySelector('.list');
 
 function loadLecture(e) { // TODO
-  const target = e.target.textContent;
+  const parentNodeList = e.target.parentNode.parentNode.childNodes;
+  const parentNodeList2 = e.target.parentNode.childNodes;
+  const parentNodeTextContent = parentNodeList[0].textContent;
+  let parentNodeTextContent2 = 0;
+  if (parentNodeList2[0].firstChild != null) {
+    parentNodeTextContent2 = parentNodeList2[0].firstChild.textContent;
+  }
+  let title;
+  if (parentNodeTextContent === 'Málfræðicss' || parentNodeTextContent === 'Saganhtml') {
+    title = parentNodeTextContent2;
+  } else if (parentNodeTextContent != null && typeof parentNodeTextContent === 'string') {
+    title = parentNodeTextContent;
+  }
   jsonData.lectures.forEach((el) => {
     const elTitle = el.title;
     const elSlug = el.slug;
-    if (target === elTitle) { // Hægt að klikka hvar sem er. Hálfgert "skítmix"
+    if (title === elTitle) { // Hægt að klikka hvar sem er. Hálfgert "skítmix"
       sessionStorage.setItem('data', JSON.stringify(el));
-      window.location.href = (`http://localhost:3002/fyrirlestur.html?slug=${elSlug}`);
+      window.location.href = (`http://localhost:3000/fyrirlestur.html?slug=${elSlug}`);
     }
   });
 }
