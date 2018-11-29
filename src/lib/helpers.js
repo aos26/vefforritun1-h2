@@ -21,13 +21,16 @@ export function empty(element) {
           </div>
         </div>
  */
-function displayLectureOnIndex(el, lectInfo) {
+function displayLectureOnIndex(el, lectInfo, lectData) {
   const element = el;
   const lectureTitleString = lectInfo[0];
   const lectureCategoryString = lectInfo[1];
   let lectureThumbString = lectInfo[2];
-  if (lectureThumbString === undefined) lectureThumbString = '';
+  const lectSlug = lectData.slug;
+  const savedSlug = window.localStorage.getItem(lectSlug);
 
+
+  if (lectureThumbString === undefined) lectureThumbString = '';
   // Númer 1
   const gridCol = document.createElement('div');
   gridCol.className = 'grid__col';
@@ -44,7 +47,20 @@ function displayLectureOnIndex(el, lectInfo) {
   // 3 hlutir, einn inní hvern ofangreindra hluta
   const lectureTitleH2 = document.createElement('h2');
   lectureTitleH2.className = 'headline2';
-  lectureTitleH2.appendChild(document.createTextNode(lectureTitleString));
+  let lectureTitleH2Check;
+  if (savedSlug) {
+    lectureTitle.style.display = 'inline-flex';
+    lectureTitleH2.style.width = '50%';
+    lectureTitleH2.appendChild(document.createTextNode(lectureTitleString));
+    lectureTitleH2Check = document.createElement('h2');
+    lectureTitleH2Check.className = 'headline2';
+    lectureTitleH2Check.style.width = '50%';
+    lectureTitleH2Check.style.textAlign = 'right';
+    lectureTitleH2Check.style.color = '#2d2';
+    lectureTitleH2Check.appendChild(document.createTextNode('✔'));
+  } else {
+    lectureTitleH2.appendChild(document.createTextNode(lectureTitleString));
+  }
   const lectureCategoryH3 = document.createElement('h3');
   lectureCategoryH3.className = 'headline3';
   lectureCategoryH3.appendChild(document.createTextNode(lectureCategoryString));
@@ -54,6 +70,9 @@ function displayLectureOnIndex(el, lectInfo) {
 
   // Púslum þessu saman
   lectureTitle.appendChild(lectureTitleH2);
+  if (savedSlug) {
+    lectureTitle.appendChild(lectureTitleH2Check);
+  }
   lectureCategory.appendChild(lectureCategoryH3);
   lectureImage.appendChild(lectureImageImg);
   lecture.appendChild(lectureTitle);
@@ -76,13 +95,13 @@ export function displayAllLecturesOnIndex(el, lectKeys, allLects, buttonBool) {
     const lectureInfo = [k[lectureKeys[0]], k[lectureKeys[1]], k[lectureKeys[2]]];
     const category = lectureInfo[1];
     if (allEqual(buttonBool)) {
-      displayLectureOnIndex(element, lectureInfo);
+      displayLectureOnIndex(element, lectureInfo, k);
     } else if (buttonBool[0] && category === 'html') { // Ef það er klikkað á html takkann til þess að sía síðu
-      displayLectureOnIndex(element, lectureInfo);
+      displayLectureOnIndex(element, lectureInfo, k);
     } else if (buttonBool[1] && category === 'css') { // Ef það er klikkað á css takkann til þess að sía síðu
-      displayLectureOnIndex(element, lectureInfo);
+      displayLectureOnIndex(element, lectureInfo, k);
     } else if (buttonBool[2] && category === 'javascript') { // Ef það er klikkað á js takkann til þess að sía síðu
-      displayLectureOnIndex(element, lectureInfo);
+      displayLectureOnIndex(element, lectureInfo, k);
     }
   });
 }
