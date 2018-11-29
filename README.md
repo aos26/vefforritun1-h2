@@ -4,6 +4,25 @@
 
 Keyra skal verkefnið með því að opna staðsetningu skjals í Command Window (eða sambærilegu forriti) og keyra skipunina npm install. Þá skal nota skipunina npm run dev.
 
+## Uppsetning
+
+Mappan vef1-h2 inniheldur allar nauðsynlegar skrár. Inni í henni eru meðal annars:
+
+* img: Mappan _img_ inniheldur allar þær myndir sem eru notaðar í verkefninu.
+* src: Mappan _src_ inniheldur allar nauðsynlegar javasript skrár auk scss skrárnar. Inni í henni eru:
+      * lib: Inniheldur JS skrárnar _helpers_ og _list_. helpers.js er hjálparskrá sem bæði list.js og index.js hafa aðgang að. list.js birtir alla fyrirlestra á fyrirlestrasíðu og sér um virkni á síunartökkum.
+      * styles: Inniheldur allar scss skrár sem sjá um útlit vefsíðu.T.d. config.scss sem heldur utan um global breytur, fyrirlestur.scss sem sér um útlit efnis innan fyrirlesturs og index.scss sem sér um útlit á forsíðu.
+      * index: index.js birtir efni fyrirlestursins sem smellt er á og kallar á list.js ef notandinn er á forsíðu, til þess að birta þá fyrirlestra sem eru í boði.
+* HTML skárnar _fyrirlestur_ og _index_: fyrirlestur.html inniheldur efni tengt fyrirlestur síðunni og index.html sér um efni á forsíðunni.
+
+## Hópurinn
+
+Alexander Þór Hafþórsson    -   atth15@hi.is
+
+Andrea Ósk Sigurðardóttir   -   aos26@hi.is
+
+Erling Óskar Kristjánsson   -   eok4@hi.is
+
 
 
 

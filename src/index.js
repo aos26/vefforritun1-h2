@@ -55,7 +55,12 @@ function displayHeader(el, lpCategory, lpTitle, lpImg) {
   lecHeaderH1.appendChild(document.createTextNode(lpTitle));
 
   // Setja hausinn á síðuna
-  lecHeader.style.backgroundImage = lpImg;
+  if (lpImg === 'url(\'/undefined\')') {
+    lecHeader.style.backgroundColor = '#aaa';
+  }
+  else {
+    lecHeader.style.backgroundImage = lpImg;
+  }
   lecHeaderContent.appendChild(lecHeaderH3);
   lecHeaderContent.appendChild(lecHeaderH1);
   lecHeader.appendChild(lecHeaderContent);

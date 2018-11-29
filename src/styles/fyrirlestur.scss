@@ -77,6 +77,10 @@ https://benmarshall.me/responsive-iframes/
   background-color: transparent;
 }
 
+.lecture {
+  transition: background-color $kvikun;
+}
+
 .lecture:hover {
   background-color: $grar1;
 }
