@@ -15,7 +15,7 @@ function loadLecture(e) { // TODO
     parentNodeTextContent2 = parentNodeList2[0].firstChild.textContent;
   }
   let title;
-  if (parentNodeTextContent === 'Málfræðicss' || parentNodeTextContent === 'Saganhtml') {
+  if (parentNodeTextContent === 'Málfræðicss' || parentNodeTextContent === 'Saganhtml' || parentNodeTextContent === 'Gildi, týpur og virkjarjavascript') {
     title = parentNodeTextContent2;
   } else if (parentNodeTextContent != null && typeof parentNodeTextContent === 'string') {
     title = parentNodeTextContent;
