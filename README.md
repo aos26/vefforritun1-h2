@@ -1,4 +1,4 @@
-#Hópverkefni 2
+# Hópverkefni 2
 
 ## Keyrsla
 
@@ -25,31 +25,11 @@ Andrea Ósk Sigurðardóttir   -   aos26@hi.is
 
 Erling Óskar Kristjánsson   -   eok4@hi.is
 
+---
+---
+---
 
-
-
-
-
-
-
-## Glósur
-
-`scss` skrár eru `src/styles`
-`styles.css` skráin er í `dist`
-
-Keyra`npm install` og `npm run dev` þegar búið að klóna repo.
-
-Það eru einungis tvær _.html_ skrár í þessu verkefni.
-
-_fyrirlestur.html_ virðist ekki nota grid né flexbox, en ég setti það allt upp á _index.html_. Efnið sem er þar þarf að fara út og og allt efni hleðst úr _lectures.json_ skránni nema
-
-   1. Hausinn og sían á _index.html_ 
-   2. Myndin í hausnum á _fyrirlestur.html_
-
-Javascript vinnan verður mesta vinnan í þessu verkefni. Það þarf að lesa úr þessu _lectures.json skjali_, geyma og halda utan um upplýsingar. Þegar maður smellir á hlekk þarf maður að fara á fyrirlestur síðu og hún hleður inn réttu efni. Mjög áhugavert, ætti ekki að vera það flókið þegar maður keyrir það í gang.
-
-
-# Hópverkefni 2
+## Gefin lýsing
 
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
 
