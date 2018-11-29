@@ -13,14 +13,28 @@ let klaradButt = 0;
 let backButt = 0;
 
 function lecKlaradur() {
-  klaradButt.style.color = '#2d2';
+  const currTexti = klaradButt.innerText;
+  let texti;
+  const slug = window.location.search.substring(6);
+  if (currTexti === 'Klára fyrirlestur') {
+    klaradButt.style.color = '#2d2';
+    texti = '✔ Kláraður fyrirlestur';
+    klaradButt.innerText = texti;
+    window.localStorage.setItem(`${slug}`, slug);
+  } else {
+    window.localStorage.removeItem(slug);
+    klaradButt.style.color = 'black';
+    klaradButt.innerText = 'Klára fyrirlestur';
+  }
 }
 
 function lecHome() {
-  window.location.href = (`http://localhost:3000`);
+  window.location.href = ('http://localhost:3000');
 }
 
-function displayFooter(el) {
+function displayFooter(el, lpSlug) {
+  const savedSlug = window.localStorage.getItem(lpSlug);
+  let texti;
   const lecFooter = document.createElement('footer');
   lecFooter.className = 'footer';
   const lecFooterContent = document.createElement('div');
@@ -28,7 +42,13 @@ function displayFooter(el) {
   const lecKlarad = document.createElement('button');
   lecKlarad.className = 'footer__button';
   lecKlarad.classList.add('klarad');
-  lecKlarad.appendChild(document.createTextNode('Klára fyrirlestur'));
+  if (savedSlug) {
+    lecKlarad.style.color = '#2d2';
+    texti = '✔ Kláraður fyrirlestur';
+    lecKlarad.innerText = texti;
+  } else {
+    lecKlarad.appendChild(document.createTextNode('Klára fyrirlestur'));
+  }
   const lecBack = document.createElement('button');
   lecBack.className = 'footer__button';
   lecBack.classList.add('back');
@@ -128,9 +148,10 @@ function loadLecturePage(page) {
   const lpTitle = lectureData.title;
   const lpImg = `url('/${lectureData.image}')`;
   const lpContent = lectureData.content;
+  const lpSlug = lectureData.slug;
   displayHeader(page, lpCategory, lpTitle, lpImg);
   displayContent(page, lpContent);
-  displayFooter(page);
+  displayFooter(page, lpSlug);
 }
 
 /**
@@ -152,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
     klaradButt.addEventListener('click', lecKlaradur);
     backButt = document.querySelector('.back');
     backButt.addEventListener('click', lecHome);
-
   } else {
     /**
      * Ef DOM síðan sem hlóðst er ekki "lecture-page", þ.e. "index.html" síðan,

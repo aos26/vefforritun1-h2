@@ -12,10 +12,16 @@ const jsColorButton = document.querySelector('.js-butt');
 function loadLecture(e) { // TODO
   const parentNodeList = e.target.parentNode.parentNode.childNodes;
   const parentNodeList2 = e.target.parentNode.childNodes;
-  const parentNodeTextContent = parentNodeList[0].textContent;
-  let parentNodeTextContent2 = 0;
+  let parentNodeTextContent = parentNodeList[0].textContent;
+  let parentNodeTextContent2 = '';
   if (parentNodeList2[0].firstChild != null) {
     parentNodeTextContent2 = parentNodeList2[0].firstChild.textContent;
+  }
+  if (parentNodeTextContent.includes('✔')) {
+    parentNodeTextContent = parentNodeTextContent.slice(0, -1);
+  }
+  if (parentNodeTextContent2.includes('✔')) {
+    parentNodeTextContent2 = parentNodeTextContent2.slice(0, -1);
   }
   let title;
   if (parentNodeTextContent === 'Málfræðicss' || parentNodeTextContent === 'Saganhtml' || parentNodeTextContent === 'Gildi, týpur og virkjarjavascript') {
@@ -41,7 +47,8 @@ function addEventHandler() {
 }
 
 function changeColor(color, button) {
-  button.style.backgroundColor = color;
+  const butt = button;
+  butt.style.backgroundColor = color;
 }
 
 function onClickHtml() {
