@@ -101,6 +101,7 @@
 }
 
 .button-green {
+  background-color: $graenn1;
   transition: background-color $kvikun;
 }
 
@@ -109,15 +110,11 @@
 }
 
 .button-green:hover {
-  /* Hér er notað !important því það er annar litur með hærra specificity,
-  ákvarðaður í src/lib/list.js */
-  background-color: $graenn2 !important;
+  background-color: $graenn2;
 }
 
 .button-grey:hover {
-  /* Hér er notað !important því það er annar litur með hærra specificity,
-  ákvarðaður í src/lib/list.js */
-  background-color: $grar2 !important;
+  background-color: $grar2;
 }
 
 /***** Endir á útliti takka (síun) *****/

@@ -46,14 +46,8 @@ function addEventHandler() {
   }
 }
 
-function changeColor(color, button) {
-  const butt = button;
-  butt.style.backgroundColor = color;
-}
-
 function onClickHtml() {
   if (!buttonBool[0]) {
-    changeColor('#2d2', htmlColorButton);
     htmlColorButton.classList.remove('button-grey');
     htmlColorButton.classList.add('button-green');
     buttonBool[0] = true;
@@ -61,7 +55,6 @@ function onClickHtml() {
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
-    changeColor('#ccc', htmlColorButton);
     htmlColorButton.classList.remove('button-green');
     htmlColorButton.classList.add('button-grey');
     buttonBool[0] = false;
@@ -73,7 +66,6 @@ function onClickHtml() {
 
 function onClickCss() {
   if (!buttonBool[1]) {
-    changeColor('#2d2', cssColorButton);
     cssColorButton.classList.remove('button-grey');
     cssColorButton.classList.add('button-green');
     buttonBool[1] = true;
@@ -81,7 +73,6 @@ function onClickCss() {
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
-    changeColor('#ccc', cssColorButton);
     cssColorButton.classList.remove('button-green');
     cssColorButton.classList.add('button-grey');
     buttonBool[1] = false;
@@ -93,7 +84,6 @@ function onClickCss() {
 
 function onClickJs() {
   if (!buttonBool[2]) {
-    changeColor('#2d2', jsColorButton);
     jsColorButton.classList.remove('button-grey');
     jsColorButton.classList.add('button-green');
     buttonBool[2] = true;
@@ -101,7 +91,6 @@ function onClickJs() {
     displayAllLecturesOnIndex(container, lectureKeys0, jsonData.lectures, buttonBool);
     addEventHandler();
   } else {
-    changeColor('#ccc', jsColorButton);
     jsColorButton.classList.remove('button-green');
     jsColorButton.classList.add('button-grey');
     buttonBool[2] = false;
